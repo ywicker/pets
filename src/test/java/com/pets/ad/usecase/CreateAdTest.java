@@ -4,10 +4,10 @@ import com.pets.ad.entity.UserAd;
 import com.pets.ad.repository.AdRepository;
 import com.pets.core.exception.InconsistentPeriodException;
 import com.pets.core.exception.StartDatePassedException;
+import com.pets.core.repository.DateRepository;
 import com.pets.profil.entity.Address;
 import com.pets.profil.entity.UserAccount;
 import com.pets.profil.usecase.UserAccountRepository;
-import com.pets.core.repository.DateRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -52,7 +52,7 @@ class CreateAdTest {
         createAd.execute(animal, startDate, endDate);
 
         // then
-        var expectedUserAd = new UserAd(userAccount, animal, startDate, endDate);
+        var expectedUserAd = new UserAd(userAccount, animal, startDate, endDate, 14L);
         verify(adRepository).save(expectedUserAd);
     }
 

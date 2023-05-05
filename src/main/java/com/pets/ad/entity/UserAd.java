@@ -3,5 +3,12 @@ package com.pets.ad.entity;
 import com.pets.profil.entity.Animal;
 import com.pets.profil.entity.UserAccount;
 
-public record UserAd(UserAccount userAccount, Animal animal, java.time.LocalDate startDate, java.time.LocalDate endDate) {
+import java.time.LocalDate;
+
+public record UserAd(
+        UserAccount userAccount,
+        Animal animal,
+        LocalDate startDate,
+        LocalDate endDate,
+        long kibbleCost) {
 }
